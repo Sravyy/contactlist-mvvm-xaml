@@ -13,7 +13,11 @@ namespace ContactsLists
 		{
 			InitializeComponent();
 
-			MainPage = new Contacts();
+            MainPage = new NavigationPage(new Contacts())
+            {
+                BarBackgroundColor = Color.Black,
+                BarTextColor = Color.White
+            };
 		}
 
 		protected override void OnStart ()

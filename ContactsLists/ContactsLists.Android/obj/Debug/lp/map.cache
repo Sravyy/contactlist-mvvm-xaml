@@ -1,4 +1,6 @@
 FormsViewGroup
+ImageCircle.Forms.Plugin.Abstractions
+ImageCircle.Forms.Plugin.Android
 System.Runtime
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
@@ -22,5 +24,3 @@ Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 System.ComponentModel
 System.Reflection.Extensions
-ImageCircle.Forms.Plugin.Abstractions
-ImageCircle.Forms.Plugin.Android

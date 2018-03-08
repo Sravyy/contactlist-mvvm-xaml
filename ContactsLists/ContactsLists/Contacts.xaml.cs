@@ -19,9 +19,9 @@ namespace ContactsLists
             var Contacts =  new List<Contact>
             {
                 new Contact {Name ="Mosh kjggg", ImageUrl = "http://lorempixel.com/100/100/people/1", Status = "lets Talk!" },
-                new Contact {Name ="Milly", ImageUrl = "http://lorempixel.com/100/100/people/4", Status = "lets Talk!" },
-                new Contact {Name ="John", ImageUrl = "http://lorempixel.com/100/100/people/2", Status = "lets Talk!" },
-                new Contact {Name ="Shon", ImageUrl = "http://lorempixel.com/100/100/people/3", Status = "lets Talk!" }
+                new Contact {Name ="Milly", ImageUrl = "http://lorempixel.com/100/100/people/5", Status = "lets Talk!" },
+                new Contact {Name ="John", ImageUrl = "http://lorempixel.com/100/100/people/3", Status = "lets Talk!" },
+                new Contact {Name ="Shon", ImageUrl = "http://lorempixel.com/100/100/people/7", Status = "lets Talk!" }
 
             };
 
@@ -38,10 +38,15 @@ namespace ContactsLists
             listView.ItemsSource = GetContacts();
         }
 
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (e.SelectedItem == null)
+                return;
+
             var contact = e.SelectedItem as Contact;
-            DisplayAlert("Selected", contact.Name, "OK");
+            //DisplayAlert("Selected", contact.Name, "OK");
+            await Navigation.PushModalAsync(new ContactDetailPage(contact));
+            listView.SelectedItem = null;
         }
 
         private void listView_Refreshing(object sender, EventArgs e)

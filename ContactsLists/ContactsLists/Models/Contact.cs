@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ContactsLists.Models
 {
-    class Contact
+    public class Contact
     {
         public string Name { get; set; }
         public string ImageUrl { get; set; }
