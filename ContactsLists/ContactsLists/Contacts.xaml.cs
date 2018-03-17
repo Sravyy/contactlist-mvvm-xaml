@@ -44,8 +44,9 @@ namespace ContactsLists
                 return;
 
             var contact = e.SelectedItem as Contact;
+            Sms sms = new Sms();
             //DisplayAlert("Selected", contact.Name, "OK");
-            await Navigation.PushModalAsync(new ContactDetailPage(contact));
+            await Navigation.PushModalAsync(new MessagePage(sms));
             listView.SelectedItem = null;
         }
 
